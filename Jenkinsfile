@@ -26,10 +26,9 @@ pipeline {
         
         
        
-        stage('Run Application') {
+        stage('Deploy WAR') {
             steps {
-                // Start the JAR application
-                sh 'java -jar target/MymavenWebApp01-1.0-SNAPSHOT.jar'
+                sh 'cp target/MymavenWebApp01.war /opt/tomcat/webapps/'
             }
         }
 
